@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        @font-face {
+            font-family: Assistant;
+            src: url(../fonts/Assistant.ttf);
+        }
+
+        body{
+            background-color: #E5EEFF;
+            font-family: Assistant;
+            padding-top: 130px;
+        }
+
+        img{
+            width: 240px;
+            margin-bottom: 20px;
+        }
+
+        .container{
+            width: 1020px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap:wrap-reverse;
+            gap: 20px;
+        }
+
+        .box{
+            background-color: #020253;
+            text-align: center;
+            padding: 150px 20px;
+            flex-grow: 3;
+            flex-basis: 500px;
+            margin-bottom: 26px;
+        }
+
+        .imgContainer{
+            flex-basis: 0;
+        }
+            
+        .box h1{
+            color: #0EE1DA;
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .box p{
+            color: #F9F9F9;
+            font-size: 1.4em;
+        }
+
+        .formBox{
+            background-color: #8E097C;
+            padding: 60px 40px;
+            font-size: 75%;
+        }
+
+        .formBox h1{
+            color: #fff
+        }
+
+        form{
+            margin-top: 40px;
+            color: #0EE1DA;
+            text-align: left;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        form input,
+        form textarea{
+            background-color: #E5EEFF;
+            border: 0;
+            border-bottom: 3px solid #0EE1DA;
+            width: 100%;
+            height: 40px;
+            margin-bottom: 20px;
+        }
+
+        form textarea {
+            height: 130px;
+        }
+
+        form #submitButton{
+            background-color: #0EE1DA;
+            color: #011560;
+            font-weight: bold;
+            font-size: 1.3em;
+            margin-bottom: 0;
+        }
+
+        @media (max-width:600px){
+            body{
+                padding: 0;
+            }
+            .container{
+                width: 100vw;
+                justify-content: center;
+                margin: 0;
+            }
+            img{
+                display: block;
+                width: 45vw;
+            }
+
+            .box{
+                width: 300px;
+                margin-bottom: 0;
+                padding: 60px;
+            }
+
+            .bottomPart{
+                flex-wrap: wrap;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="imgContainer">
+            <img src="../images/LPage5/Rectangle 506-1.png" alt="">
+            <img src="../images/LPage5/Rectangle 506-2.png" alt="">
+        </div>
+        <div class="imgContainer">
+            <img src="../images/LPage5/Rectangle 506-3.png" alt="">
+            <img src="../images/LPage5/Rectangle 506-4.png" alt="">
+        </div>
+        <div class="box">
+            <h1>Discover The World</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, ipsa!</p>
+        </div>
+    </div>
+    <div class="container">
+        <img src="../images/LPage5/Rectangle 506-5.png" alt="">
+        <img src="../images/LPage5/Rectangle 506-6.png" alt="">
+        <img src="../images/LPage5/Rectangle 506-7.png" alt="">
+        <img src="../images/LPage5/Rectangle 506-8.png" alt="">
+    </div>
+    <div class="container bottomPart">
+        <div class="box formBox">
+            <h1>Tell us about your experience</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam iusto nam officia natus ipsum.</p>
+            <form>
+                <label>Name</label><br>
+                <input type="text"><br>
+                <label>Email</label><br>
+                <input type="email"><br>
+                <label>Your experience</label><br>
+                <textarea name="test"></textarea><br>
+                <input type="submit" id="submitButton">
+            </form>
+        </div>
+        <div class="imgContainer">
+            <img src="../images/LPage5/Rectangle 506-9.png" alt="">
+            <img src="../images/LPage5/Rectangle 506.png" alt="">
+            <img src="../images/LPage5/Rectangle 513.png" alt="">
+        </div>
+        <div class="imgContainer">
+            <img src="../images/LPage5/Rectangle 514.png" alt="">
+            <img src="../images/LPage5/Rectangle 515.png" alt="">
+            <img src="../images/LPage5/Rectangle 516.png" alt="">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,2 @@
+- add "alt" attribute to all images
+- walkthrough all the early pages

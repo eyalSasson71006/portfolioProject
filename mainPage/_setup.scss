@@ -1,0 +1,46 @@
+$textColor: #3A3A3A;
+$siteBlue: #1AE0EC;
+
+
+@font-face {
+    font-family: "Heebo";
+    src: url(../fonts/Heebo.ttf);
+}
+
+@font-face {
+    font-family: "satisfy";
+    src: url(../fonts/Satisfy-Regular.ttf);
+}
+
+@mixin mobile {
+    @media (max-width:576px) {
+        @content;
+    }
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Heebo";
+    font-size: 1em;
+    color: $textColor;
+    margin: 0;
+}
+
+a {
+    color: $textColor;
+    text-decoration: none;
+}
+
+
+.button {
+    background-color: $siteBlue;
+    font-weight: 700;
+    border-radius: 20px;
+    border: 0;
+    padding: 7px 30px;
+}

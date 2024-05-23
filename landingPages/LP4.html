@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: Assistant;
+            src: url(../fonts/Assistant.ttf);
+        }
+
+        body{
+            background-image: url("../images/page2bg.png");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: Assistant;
+        }
+
+        .container{
+            width: 90vw;
+            margin: 20vh auto;
+            color: #fff;
+            text-align: center;
+        }
+
+        h1{
+            color: #D3E10E;
+            font-size: 5em;
+        }
+
+        p{
+            font-size: 1.2em;
+        }
+
+        form{
+            position: absolute;
+            bottom: 12vh;
+            right: 0;
+            left: 0;
+            margin: 0 auto;
+            margin-top: 40px;
+            color: rgba(1, 21, 96, 1);
+            display: flex;
+            column-gap: 15px;
+            justify-content: center;
+            font-weight: bold;
+
+        }
+
+        form input{
+            width: 300px;
+            height: 40px;
+            background-color: rgba(246, 246, 246, 1);
+            border: 0;
+            border-bottom: 4px solid rgba(211, 225, 14, 1);
+        }
+
+        #submit{
+            width: 150px;
+            background-color: rgba(211, 225, 14, 1);
+            color: rgba(1, 21, 96, 1);
+            margin-top: 18px;
+            font-weight: bold;
+        }
+
+        @media (max-width:550px){
+            body{
+                width: 100vw;
+                background-size: cover;
+            }
+
+            .container{
+                height: 50vh;
+                margin: 0 auto;
+                padding-top: 50px;
+            }
+
+            h1{
+                font-size: 3em;
+            }
+
+            form{
+                flex-direction: column;
+                width: 80vw;
+            }
+            
+            #submit{
+                width: 300px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Let Us Lead You Forward</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit Ab, sunt.
+        </p>
+    </div>  
+    <form>
+        <div>
+            <label>Name</label><br>
+            <input type="text">
+        </div>
+        <div>
+            <label>Email</label><br>
+            <input type="text">
+        </div>
+        <div><input id="submit" type="submit"></div>
+    </form>
+</body>
+</html>

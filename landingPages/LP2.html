@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: "satisfy";
+            src: url(../fonts/Satisfy-Regular.ttf);
+        }
+
+        @font-face {
+            font-family: "valera round";
+            src: url(../fonts/VarelaRound-Regular.ttf);
+        }
+
+        body{
+            width: 100vw;
+            height: 100vh;
+            background-image: linear-gradient(#281EFF, #2DFF8C);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .container{
+            width: 850px;
+            height: 500px;
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            text-align: center;
+            color: #fff;
+            font-family: "valera round";
+        }
+        .container h1{
+            font-family: satisfy;
+            font-size: 8.5em;
+            margin-bottom: 25px;
+            font-weight:100;
+            text-shadow: 0 0 36px #00000087;
+        }
+
+        .container h2{
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            font-weight: normal;
+        }
+        form{
+            margin-top: 40px;
+            color: rgba(249, 249, 249, 1);
+            text-align: left;
+            display: flex;
+            column-gap: 15px;
+            justify-content: space-between;
+        }
+
+        form label{
+            display: block;
+        }
+
+        form input{
+            width: 320px;
+            height: 40px;
+            background-color: rgba(246, 246, 246, 0.14);
+            border: 1px solid rgba(255, 255, 255, 1);
+        }
+
+        form input[type="submit"]{
+            width: 200px;
+            background-color: rgba(255, 255, 255, 1);
+            color: #000;
+            margin-top: 18px;
+        }
+
+        @media (max-width:600px){
+            .container{
+                width: 80vw;
+                height: 80vh;
+            }
+
+            .container h1{
+                font-size: 4em;
+            }
+
+            .container h2{
+                font-size: 1.5em;
+            }
+
+            form{
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            form input,
+            form input[type="submit"]{
+                width: 100%;
+            }
+
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Here & Now</h1>
+        <h2>Lorem ipsum dolor sit amet consectetur</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita distinctio iusto quis suscipit adipisci corrupti</p>
+        <form>
+            <div>
+                <label for="nameLabel">Name</label>
+                <input type="text" id="nameLabel">
+            </div>
+            <div>
+                <label for="emailLabel">Email</label>
+                <input type="text" id="emailLabel">
+            </div>
+            <div><input id="submit" type="submit"></div>
+        </form>
+    </div>
+</body>
+</html>

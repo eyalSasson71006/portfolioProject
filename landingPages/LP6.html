@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: Heebo;
+            src: url(../fonts/Heebo.ttf);
+        }
+
+        .borderTop{
+            height: 14px;
+            width: 20vw;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #FDBD03; 
+        }
+
+        body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            font-family: Heebo;
+        }
+
+        .container{
+            display: flex;
+            gap: 50px;
+            width: 80vw;
+            height: 100hv;
+            margin: auto;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container img{
+            height: 75vh;
+        }
+
+        .borderBottom{
+            height: 14px;
+            width: 55vw;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background-color: #FDBD03; 
+        }
+
+        .box{
+            text-align: left;
+        }
+
+        .box h1{
+            color: #FDBD03;
+            font-size: 2.5em;
+        }
+
+        .box p{
+            color: #020253;
+            width: 60%;
+            margin-bottom: 15px;
+        }
+
+        form{
+            color: #2C2C2C;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        form input{
+            height: 35px;
+            width: 100%;
+            margin-bottom: 20px;
+            background-color: #E5EEFF;
+            border: 0;
+            border-bottom: 3px solid #FDBD03;
+            
+        }
+        
+        .formTop{
+            width: 100%;
+            display: flex;
+            gap: 20px;
+        }
+
+        .formTop div{
+            width: 100%;
+        }
+
+        form textarea {
+            border: 0;
+            border-bottom: 3px solid #FDBD03;
+            border-radius: 3px;
+            margin-bottom: 8px;
+            background-color: #E5EEFF;
+            width: 100%;
+            height: 80px;
+
+        }
+
+        form input[type="submit"]{
+            background-color: #FDBD03;
+            color: #2C2C2C;
+            width: 30%;
+            font-weight: bold;
+        }
+
+        .social{
+            display: flex;
+            gap: 20px;
+            position: absolute;
+            right: 30px;
+            bottom: 50px;
+             
+        }
+
+        .icons{
+            background-color: #FDBD03;
+            width: 60px;
+            height: 60px;
+            padding: 15px;
+            border-radius: 50%;
+        }
+
+        .icons img{
+            margin: 0 auto;
+            width: 30px;
+            height: 30px;
+        }
+        
+        .whatsapp{
+            position: absolute;
+            left: 50px;
+            top: 50px;
+            z-index: 0;
+        }
+
+        @media (max-width:600px){
+            .borderBottom, .borderTop{
+                width: 100vw;
+            }
+
+
+            .container{
+                flex-wrap: wrap;
+                height:fit-content;
+                width: 100vw;
+                gap: 20px;
+            }
+
+            .container>img{
+                height: 40vw;
+                margin-top: 50px;
+            }
+
+            .whatsapp{
+                display: none;
+            }
+
+            .box{
+                text-align: center;
+                font-size: 80%;
+                margin-bottom: 100px;
+                width: 80vw;
+            }
+
+            .box p{
+                width: 100%;
+                margin-bottom: 50px;
+            }
+
+
+            .formTop{
+                flex-direction: column;
+                text-align: left;
+            }
+
+            .content{
+                text-align: left;
+            }
+
+            form input[type="submit"]{
+                width: 100%;
+                
+            }
+
+            .social{
+                position: unset;
+            }
+
+            .borderBottom{
+                position: unset;
+                bottom: 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="borderTop"></div>
+        <div class="icons whatsapp"><img src="../images/whatsapp.svg" alt=""></div>
+        <img src="../images/LPage6.png" alt="img">
+        <div class="box">
+            <h1>Free Consulation</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto odio sed dolor.</p>
+            <form>
+                <div class="formTop">
+                    <div>
+                        <label>Name</label><br>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label>Email</label><br>
+                        <input type="text">
+                    </div>
+                </div>
+               <div class="content">
+                    <label>Content</label><br>
+                    <textarea name="" id=""></textarea>
+               </div>
+                <input type="submit">
+            </form>
+        </div>
+        <div class="social">
+            <div class="icons"><img src="../images/facebook-f.svg" alt=""></div>
+            <div class="icons"><img src="../images/instagram.svg" alt=""></div>
+            <div class="icons"><img src="../images/linkedin-in.svg" alt=""></div>
+            <div class="icons"><img src="../images/phone.svg" alt=""></div>
+        </div>
+        <div class="borderBottom"></div>
+    </div>
+</body>
+</html>

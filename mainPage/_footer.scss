@@ -1,0 +1,35 @@
+footer .socialMedia {
+    background-color: $siteBlue;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    text-align: center;
+    padding: 30px;
+}
+
+
+footer .crFooter {
+    display: flex;
+    justify-content: space-between;
+    background-color: #000;
+    color: $siteBlue;
+    border-bottom: 2px solid $siteBlue;
+    padding: 10px;
+}
+
+@include mobile{
+    footer .socialMedia {
+        gap: 15px;
+        margin: auto;
+    }
+
+    footer .socialMedia div {
+        width: 45%;
+    }
+
+    footer .socialMedia div:nth-child(5) {
+        font-size: 90%;
+    }
+    
+}

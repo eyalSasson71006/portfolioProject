@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-image: url("../images/page1bg.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .container{
+            background-color: rgba(26, 26, 26, 0.83);
+            width: 30vw;
+            height:fit-content;
+            color:#FFFFFF;
+            font-family: Arial, Helvetica, sans-serif;
+            position: absolute;
+            left: 20vw;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            text-align: left;
+            padding: 4%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 3%;
+        }
+
+        .container h1{
+            font-size: 1.5em;
+        }
+
+        .container p{
+            font-size: 1em;
+        }
+        form{
+            margin-top: 10%;
+        }
+        form label,
+        form input{
+            margin-top: 3px;
+            margin-bottom: 7%;
+        }
+        form input{
+            width: 100%;
+            height: 40px;
+            border: 1px solid #D31C75;
+        }
+        #submit{
+            background-color: #d31c75;
+            width: 40%;
+            color: #fff;
+            font-size: 1.1em;
+        }
+
+        @media (max-width:600px) {
+            .container{
+                width: 80vw;
+                height: fit-content;
+                position: absolute;
+                inset: 0;
+                margin: auto;
+                padding: 13%;
+            }
+
+            .container p,
+            .container h1{
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Let Us Lead You Forward</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore quas amet quod, corrupti exercitat.</p>
+        <form>
+            <label>Full Name</label><br>
+            <input type="text"><br>
+            <label>Email</label><br>
+            <input type="text"><br>
+            <input id="submit" type="submit"><br>
+
+        </form>
+    </div>
+</body>
+</html>

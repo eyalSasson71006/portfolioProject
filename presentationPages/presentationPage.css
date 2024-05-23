@@ -1,0 +1,74 @@
+
+.logoSection img{
+    width: 3vw;
+    min-width: 30px;
+    margin: 0 20px 20px;
+}
+
+.mainHead h2{
+    font-size: 1.4em;
+    font-weight: normal;
+    margin-bottom: 70px;
+}
+
+.mainHead a{
+    margin: 30px;
+}
+.imgContainer{
+    padding: 150px 0;
+}
+.imgContainer img{
+    display: block;
+    width: 70vw;
+    margin: auto;
+    box-shadow: 0 0 15px 5px #888888;
+}
+
+@media (max-width:600px){
+    header {
+        position: absolute;
+        display: block;
+        height: 8vh;
+    }
+
+    header>a {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    header nav ul {
+        display: none;
+        padding: 0;
+        text-align: center;
+        margin-top: 0;
+    }
+
+    header nav ul li {
+        margin: 0;
+        display: block;
+        width: 100%;
+        height: 60px;
+        line-height: 2.5;
+        background-color: #fff;
+        border-top: 1px solid #1AE0EC;
+    }
+
+    .hamburger:hover+ul {
+        display: block;
+        clear: both;
+    }
+    
+    .mainHead{
+        padding: 100px 40px;
+        background-image: linear-gradient(#13E8F163 0 20%, white);
+        font-size: 80%;
+    }
+
+    .mainHead a.button{
+        display: block;
+        margin-bottom: 20px;
+    }
+}

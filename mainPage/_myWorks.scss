@@ -1,0 +1,54 @@
+.myWorks {
+    background-color: #F6F6F6;
+    text-align: center;
+    padding-bottom: 80px;
+}
+
+.myWorks h2 {
+    font-size: 40px;
+    padding: 50px 50px 10px;
+}
+
+.myWorks p {
+    font-size: 1.2em;
+    padding-bottom: 30px;
+}
+
+.projectsPreview {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    padding: 0 70px;
+    gap: 20px;
+}
+
+.projectsPreview .projectBox {
+    background-color: #eee;
+    box-shadow: 0 0 15px 3px #888888;
+    max-width: 350px;
+    padding-bottom: 40px;
+    border-radius: 10px;
+}
+
+.projectsPreview .projectBox:hover {
+    box-shadow: 0 0 15px 8px #888888;
+
+}
+
+.projectsPreview .projectBox img {
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+}
+
+.projectsPreview .icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.projectsPreview .icons img {
+    width: 7%;
+}
