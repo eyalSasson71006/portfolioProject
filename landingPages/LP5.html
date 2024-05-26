@@ -38,7 +38,6 @@
             background-color: #020253;
             text-align: center;
             padding: 150px 20px;
-            flex-grow: 3;
             flex-basis: 500px;
             margin-bottom: 26px;
         }
@@ -68,12 +67,19 @@
             color: #fff
         }
 
+        .formBox p{
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
         form{
             margin-top: 40px;
             color: #0EE1DA;
             text-align: left;
             font-size: 1.2em;
             font-weight: bold;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         form input,
@@ -88,6 +94,7 @@
 
         form textarea {
             height: 130px;
+            resize: none;
         }
 
         form #submitButton{
@@ -98,7 +105,7 @@
             margin-bottom: 0;
         }
 
-        @media (max-width:600px){
+        @media (max-width:1020px){
             body{
                 padding: 0;
             }
@@ -112,10 +119,10 @@
                 width: 45vw;
             }
 
-            .box{
-                width: 300px;
+            .container .box{
                 margin-bottom: 0;
                 padding: 60px;
+                flex-basis: 100vw;
             }
 
             .bottomPart{
@@ -128,12 +135,12 @@
 <body>
     <div class="container">
         <div class="imgContainer">
-            <img src="../images/LPage5/Rectangle 506-1.png" alt="">
-            <img src="../images/LPage5/Rectangle 506-2.png" alt="">
+            <img src="../images/LPage5/Rectangle 506-1.png" alt="forest">
+            <img src="../images/LPage5/Rectangle 506-2.png" alt="mountains">
         </div>
         <div class="imgContainer">
-            <img src="../images/LPage5/Rectangle 506-3.png" alt="">
-            <img src="../images/LPage5/Rectangle 506-4.png" alt="">
+            <img src="../images/LPage5/Rectangle 506-3.png" alt="beach">
+            <img src="../images/LPage5/Rectangle 506-4.png" alt="sunset">
         </div>
         <div class="box">
             <h1>Discover The World</h1>
@@ -141,34 +148,34 @@
         </div>
     </div>
     <div class="container">
-        <img src="../images/LPage5/Rectangle 506-5.png" alt="">
-        <img src="../images/LPage5/Rectangle 506-6.png" alt="">
-        <img src="../images/LPage5/Rectangle 506-7.png" alt="">
-        <img src="../images/LPage5/Rectangle 506-8.png" alt="">
+        <img src="../images/LPage5/Rectangle 506-5.png" alt="shoreline">
+        <img src="../images/LPage5/Rectangle 506-6.png" alt="train">
+        <img src="../images/LPage5/Rectangle 506-7.png" alt="man sitting on the street">
+        <img src="../images/LPage5/Rectangle 506-8.png" alt="monkey">
     </div>
     <div class="container bottomPart">
         <div class="box formBox">
             <h1>Tell us about your experience</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam iusto nam officia natus ipsum.</p>
             <form>
-                <label>Name</label><br>
-                <input type="text"><br>
-                <label>Email</label><br>
-                <input type="email"><br>
-                <label>Your experience</label><br>
-                <textarea name="test"></textarea><br>
+                <label for="nameLabel">Name</label><br>
+                <input type="text" id="nameLabel"><br>
+                <label for="emailLabel">Email</label><br>
+                <input type="email" id="emailLabel"><br>
+                <label for="textArea">Your experience</label><br>
+                <textarea name="test" id="textArea"></textarea><br>
                 <input type="submit" id="submitButton">
             </form>
         </div>
         <div class="imgContainer">
-            <img src="../images/LPage5/Rectangle 506-9.png" alt="">
-            <img src="../images/LPage5/Rectangle 506.png" alt="">
-            <img src="../images/LPage5/Rectangle 513.png" alt="">
+            <img src="../images/LPage5/Rectangle 506-9.png" alt="hills">
+            <img src="../images/LPage5/Rectangle 506.png" alt="lake">
+            <img src="../images/LPage5/Rectangle 513.png" alt="dome">
         </div>
         <div class="imgContainer">
-            <img src="../images/LPage5/Rectangle 514.png" alt="">
-            <img src="../images/LPage5/Rectangle 515.png" alt="">
-            <img src="../images/LPage5/Rectangle 516.png" alt="">
+            <img src="../images/LPage5/Rectangle 514.png" alt="women">
+            <img src="../images/LPage5/Rectangle 515.png" alt="lake">
+            <img src="../images/LPage5/Rectangle 516.png" alt="beach">
         </div>
     </div>
 </body>

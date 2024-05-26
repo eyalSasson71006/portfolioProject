@@ -25,7 +25,7 @@
             font-family: Assistant;
         }
 
-        .container{
+        .headContainer{
             width: 90vw;
             margin: 20vh auto;
             color: #fff;
@@ -50,7 +50,7 @@
             margin-top: 40px;
             color: rgba(1, 21, 96, 1);
             display: flex;
-            column-gap: 15px;
+            flex-wrap: wrap;
             justify-content: center;
             font-weight: bold;
 
@@ -64,6 +64,10 @@
             border-bottom: 4px solid rgba(211, 225, 14, 1);
         }
 
+        form div{
+            margin: 0 10px;
+        }
+
         #submit{
             width: 150px;
             background-color: rgba(211, 225, 14, 1);
@@ -72,13 +76,13 @@
             font-weight: bold;
         }
 
-        @media (max-width:550px){
+        @media (max-width:600px){
             body{
                 width: 100vw;
                 background-size: cover;
             }
 
-            .container{
+            .headContainer{
                 height: 50vh;
                 margin: 0 auto;
                 padding-top: 50px;
@@ -92,16 +96,24 @@
                 flex-direction: column;
                 width: 80vw;
             }
+
+            form input{
+                width: 100%;
+            }
+
+            form div{
+                margin: 0;
+            }
             
             #submit{
-                width: 300px;
+                width: 100%;
             }
         }
         
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="headContainer">
         <h1>Let Us Lead You Forward</h1>
         <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit Ab, sunt.
@@ -109,12 +121,12 @@
     </div>  
     <form>
         <div>
-            <label>Name</label><br>
-            <input type="text">
+            <label for="nameLabel">Name</label><br>
+            <input type="text" id="nameLabel">
         </div>
         <div>
-            <label>Email</label><br>
-            <input type="text">
+            <label for="emailLabel">Email</label><br>
+            <input type="text" id="emailLabel">
         </div>
         <div><input id="submit" type="submit"></div>
     </form>

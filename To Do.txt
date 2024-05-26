@@ -1,3 +1,3 @@
-- add "alt" attribute to all images
-- walkthrough all the early pages
-- fix "download" buttons
+- add "alt" attribute to all images  V
+- walkthrough all the early pages   V
+- fix "download" buttons  V

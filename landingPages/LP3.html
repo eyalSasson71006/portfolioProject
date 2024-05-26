@@ -23,7 +23,9 @@
 
         img {
             display: block;
+            width: 60vw;
             height: 100vh;
+            object-fit: cover;
         }
 
         #coffeeM {
@@ -105,10 +107,10 @@
         <h1>Coffee for a better day</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit Ex nostrum.</p>
         <form>
-            <label>Full Name</label><br>
-            <input type="text"><br>
-            <label>Email</label><br>
-            <input type="text"><br>
+            <label for="nameLabel">Full Name</label><br>
+            <input type="text" id="nameLabel"><br>
+            <label for="emailLabel">Email</label><br>
+            <input type="text" id="emailLabel"><br>
             <input type="submit">
         </form>
     </div>
