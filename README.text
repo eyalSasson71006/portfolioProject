@@ -1,0 +1,13 @@
+hey, my name is Eyal Sasson.
+This project is my portfolio website created to demonstrate my capabilities in front-end development. It includes various sections such as an about me, my projects, skills, and contact information.
+
+Features:
+- Responsive Design: Adapts to different screen sizes using CSS's grid and Flex responsive utilities.
+- Modern UI/UX: A clean and professional design using SASS for custom styles.
+Interactive Elements: Includes animations and interactive elements to enhance user experience.
+
+Technologies Used:
+- HTML5: For structuring the content on the web.
+- CSS3: For styling the content.
+- SASS: A preprocessor scripting language that is interpreted or compiled into CSS.
+- Bootstrap: A CSS framework for developing responsive and mobile-first websites.
