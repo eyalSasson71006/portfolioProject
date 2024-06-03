@@ -11,9 +11,14 @@
 <body>
     <header>
         <nav>
-            <div class="hamburger">&#9776;</div>
             <input type="checkbox">
-            <ul>
+            <ul class="hamburgerWrapper">
+                <li class="hamburger"></li>
+                <li class="hamburger"></li>
+                <li class="hamburger"></li>
+            </ul>
+            
+            <ul class="menu">
                 <li><a id="homeLink" href="index.html">Home</a></li>
                 <li><a href="index.html#myWorksSec">My Works</a></li>
                 <li><a href="index.html#contactSection">Contact Me</a></li>
@@ -42,23 +47,26 @@
         <img src="../images/profile-image.png" alt="porfile image">
     </div>
     <section class="aboutMe">
-        <h3>About Me</h3>
-        <p>
-            Hello, my name is Eyal Sasson, a 22-year-old from Israel diving into the world of web development. Tech and
-            computers
-            have always fascinated me, so I'm thrilled to be pursuing this passion. Currently, I'm in the midst of a
-            full stack
-            course, learning JavaScript, HTML, CSS, WordPress, and everything else needed to create websites. While I'm
-            new to the
-            field, my determination to learn and grow drives me forward. Let's embark on this journey together as I
-            transform my
-            love for technology into a career in web development!
-        </p>
-        <a class="button" href="#" title="CV will be published soon...">Download my CV</a>
+       <div>
+            <h3>About Me</h3>
+            <p>
+                Hello, my name is Eyal Sasson, a 22-year-old from Israel diving into the world of web development. Tech and
+                computers
+                have always fascinated me, so I'm thrilled to be pursuing this passion. Currently, I'm in the midst of a
+                full stack
+                course, learning JavaScript, HTML, CSS, WordPress, and everything else needed to create websites. While I'm
+                new to the
+                field, my determination to learn and grow drives me forward. Let's embark on this journey together as I
+                transform my
+                love for technology into a career in web development!
+            </p>
+       </div>
+        <img src="../images/Programming.gif" alt="programer">
+        <a class="button" onclick="alert('CV will be published soon...')">Download my CV</a>
     </section>
     <div class="myWorks" id="myWorksSec">
         <h2>My Works</h2>
-        <p>Examples for Landing Pages templates written with HTML and CSS</p>
+        <p>Examples for Landing Pages templates written with HTML, CSS and Bootstrap</p>
         <div class="projectsPreview">
             <div class="projectBox">
                 <img src="../images/Screenshot1.png" alt="project preview">
@@ -87,6 +95,7 @@
                 <div class="icons">
                     <img src="../images/html.svg" alt="HTML">
                     <img src="../images/css.svg" alt="CSS">
+                    <img src="../images/bootstrap.svg" alt="bootstrap">
                 </div>
                 <a class="button" href="../presentationPages/presentationLP3.html">Project Page</a>
             </div>

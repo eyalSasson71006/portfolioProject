@@ -1,7 +1,7 @@
 header {
     font-size: 25px;
     color: $textColor;
-    background-color: white;
+    background-color: #F6F6F6;
     width: 100vw;
     height: 10vh;
     max-height: 80px;
@@ -20,21 +20,44 @@ header>a {
     color: #000;
 }
 
-.hamburger {
-    font-size: 1.4em;
-    color: $siteBlue;
-    padding: 8px 15px;
-    background-color: #fff;
+.hamburgerWrapper {
     display: none;
+    // margin: 15px 10px;
 }
 
-input[type="checkbox"]{
+.hamburgerWrapper ul {
+    list-style-type: none;
+    height: 40px;
+}
+
+.hamburger {
+    margin-top: 5px;
+    height: 8px;
+    width: 40px;
+    border-radius: 20%/90%;
+    background-color: $siteBlue;
+    transition: all 1s ease;
+    position: relative;
+}
+
+nav input[type="checkbox"]:checked+ul.hamburgerWrapper li:nth-child(1) {
+    transform: translateY(12.5px) rotate(45deg);
+}
+
+nav input[type="checkbox"]:checked+ul.hamburgerWrapper li:nth-child(3) {
+    transform: translateY(-12.5px) rotate(-45deg);
+}
+
+nav input[type="checkbox"]:checked+ul.hamburgerWrapper li:nth-child(2) {
+    transform: rotate(-45deg);
+}
+
+input[type="checkbox"] {
     display: none;
 }
 
 header nav a {
     transition: all 0.2s ease-in-out;
-
 }
 
 header nav li {
@@ -43,44 +66,48 @@ header nav li {
 
 }
 
-header nav a:hover {
-    color: $siteBlue;
-
-}
-
+header nav a:hover,
 header nav #homeLink {
     color: $siteBlue;
+
 }
+
 
 @include mobile {
     header {
         position: absolute;
         display: block;
-        height: fit-content;
-        padding: 0;
+        padding: 10px 0;
+        width: 100%;
     }
 
     header>a {
         display: none;
     }
 
-    .hamburger {
+
+    .hamburgerWrapper {
         display: block;
+        margin-left: 10px;
+        margin-bottom: 8px;
     }
 
-    input[type="checkbox"]{
+    input[type="checkbox"] {
         display: block;
         position: absolute;
-        left: 15px;
+        left: 10px;
         top: 15px;
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 35px;
         opacity: 0;
         cursor: pointer;
+        z-index: 2;
     }
 
-    header nav ul {
-        display: none;
+    header nav ul.menu {
+        opacity: 0;
+        transition: all 1s ease;
+        padding-top: 500px;
         padding: 0;
         text-align: center;
         margin-top: 0;
@@ -96,9 +123,8 @@ header nav #homeLink {
         border-top: 1px solid $siteBlue;
     }
 
-    input[type="checkbox"]:checked+ul {
-        display: block;
+    input[type="checkbox"]:checked~ul.menu {
+        opacity: 1;
         clear: both;
-
     }
 }

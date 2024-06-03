@@ -13,8 +13,22 @@ $siteBlue: #1AE0EC;
 }
 
 @mixin mobile {
-    @media (max-width:576px) {
+    @media (max-width:610px) {
         @content;
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
     }
 }
 
@@ -39,6 +53,7 @@ a {
 
 .button {
     background-color: $siteBlue;
+    cursor: pointer;
     font-weight: 700;
     border-radius: 20px;
     border: 0;

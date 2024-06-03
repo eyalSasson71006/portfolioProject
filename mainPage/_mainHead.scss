@@ -1,13 +1,18 @@
 .mainHead {
-    background-image: linear-gradient(#13E8F163 0 60%, white);
-    padding: 120px;
-    text-align: center;
+    // background-image: linear-gradient(#13E8F163 0 60%, white);
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    // color: $textColor;
+    color: #fff;
+    padding: 150px;
+    text-align: center; 
 }
 
 .mainHead h1 {
     font-size: 4em;
     margin-bottom: 0;
-
+    
 }
 
 .mainHead h2 {
@@ -28,10 +33,12 @@
     max-width: 100px;
 }
 
-@include mobile{
+@include mobile {
     .mainHead {
-            padding: 100px 50px;
+        padding: 100px 50px;
     }
+
+    
 
     .logoSection img {
         width: 13vw;
