@@ -42,7 +42,9 @@
     border-radius: 10px 10px 0 0;
     width: 100%;
 }
-
+.projectsPreview .projectBox>p{
+    padding: 0 20px;
+}
 .projectsPreview .icons {
     display: flex;
     justify-content: center;

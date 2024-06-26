@@ -1,0 +1,115 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url("./images/bg.jpg") bottom center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 2.5em;
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.game-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flag-container {
+    margin-bottom: 20px;
+}
+
+.flag-container img {
+    width: 300px;
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-left: none;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    outline: none;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+#skip{
+    border-radius:0 5px 5px 0;
+    background-color: #882121;
+}
+
+#result {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+#result.correct {
+    color: green;
+}
+
+#result.wrong {
+    color: red;
+}
+
+#scoreLabel{
+    position: absolute;
+    width: fit-content;
+    top: 20px;
+    margin: 0 auto;
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+
+@media(max-width:660px){
+    .flag-container img{
+        width: 200px;
+    }
+
+    h1{
+        font-size: 2em;
+    }
+    .input-container input{
+        width: 60%;
+    }
+}

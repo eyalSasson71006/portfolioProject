@@ -1,0 +1,223 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@keyframes slide {
+    0% {
+        left: 1000px;
+        opacity: 0;
+    }
+
+    100% {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+body{
+    background-image: url(./images/blackjackBg.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+#popUp{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+#winner{
+    font-size: 6em;
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+}
+
+.ui{
+    position: absolute;
+    margin: auto;
+    bottom: 20px;  
+    left: 0;
+    right: 0;
+    text-align: center;  
+    display: flex;
+    justify-content: center;
+}
+
+.ui button,
+#rstBtn{
+    padding: 10px;
+    width: 100px;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 10px;
+    cursor: pointer;
+    border: 0;
+    background-color: brown;
+}
+
+#rstBtn{
+    z-index: 999;
+}
+
+#player, #dealer{
+    height: 200px;
+    max-width: 90vw;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+#dealer{
+    top: 50px;
+}
+
+#player{
+    top: 300px;
+}
+
+.card{
+    height: 120px;
+    border-radius: 10px;
+    margin: 0 5px;
+    box-shadow: 5px 5px 5px  rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.card:last-child{
+    position: relative;
+    animation: slide 0.5s forwards;
+}
+
+#moneyContainer{
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    left: 20px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#chipsContainer{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#chipsContainer img{
+    width: 50px;
+    cursor: pointer;
+}
+
+#totalBet{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#totalMoney{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+#betContainer{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+}
+
+#placeBtn{
+    padding: 10px;
+    width: 100px;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 10px;
+    cursor: pointer;
+    border: 0;
+    background-color: brown;
+}
+
+#betBlock{
+    z-index: 9999;
+}
+
+
+@media(max-width:860px){
+    .card{
+        margin: 0 -30px;
+    }
+
+    #moneyContainer{
+        left: 15px;
+        right: auto;
+        bottom: 15px;
+        height: auto;
+        width: fit-content;
+        text-align: left;
+        align-items: baseline;
+        margin: 0;
+    }
+
+    #chipsContainer{
+        flex-direction: column-reverse;
+    }
+
+    #placeBtn{
+        margin: 0 15px 10px 0 ;
+    }
+
+    .ui{
+        right: 15px;
+        left: auto;
+        bottom: 15px;
+        flex-direction: column;
+    }
+    #totalMoney{
+        top: 10px;
+        right: 0;
+        left: 0;
+        width: fit-content;
+        margin: 0 auto;
+    }
+
+    #player,
+    #dealer{
+        justify-content: start;
+    }
+
+    #playerHand,
+    #dealerHand{
+        display: none;
+    }
+    
+    #popUp{
+        font-size: 0.5em;
+    }
+
+}

@@ -307,6 +307,10 @@ header nav #homeLink {
   width: 100%;
 }
 
+.projectsPreview .projectBox > p {
+  padding: 0 20px;
+}
+
 .projectsPreview .icons {
   display: flex;
   justify-content: center;

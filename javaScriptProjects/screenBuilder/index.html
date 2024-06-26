@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="sideMenu">
+        <header>
+            <h1>Page builder</h1>
+        </header>
+        <form>
+            <div>
+                <label for="elementInput">Element Type</label>
+                 <select name="" id="elementInput">
+                    <option value="" class="placeholderOption">Select</option>
+                    <option value="div">Box</option>
+                    <option value="h2">Head Line</option>
+                    <option value="p">Paragraph</option>
+                    <option value="button">Button</option>
+                    <!-- <option value="img">Image</option> -->
+                 </select>
+            </div>
+            <!-- <div>
+                <label for="imgInput">Uplode Image</label>
+                <input id="imgInput" type="file">
+            </div> -->
+            <div>
+                <label for="bgcInput">Background Color</label>
+                <input id="bgcInput" type="text">
+            </div>
+            <div>
+                <label for="">Width</label>
+                <input type="text" id="widthInput">
+            </div>
+            <div>
+                <label for="">Height</label>
+                <input type="text" id="heightInput">
+            </div>
+            <div class="textAreaContainer">
+                <label for="">Text Content</label>
+                <textarea name="" id="contentInput"></textarea>
+            </div><br>
+            <div>
+                <label for="">Text Color</label>
+                <input type="text" id="colorInput">
+            </div>
+            <div>
+                <label for="">Text Align</label>
+                <select id="textAlignInput">
+                    <option value="" class="placeholderOption">Select</option>
+                    <option value="left">Left</option>
+                    <option value="center">Center</option>
+                    <option value="right">Right</option>
+                    <option value="justify">Justify</option>
+                </select>
+            </div>
+            <div>
+                <label for="">Font Size</label>
+                <input type="text" id="fontSizeInput">
+            </div>
+            <div>
+                <label for="">Font Family</label>
+                <input type="text" id="fontFamilyInput">
+            </div>
+            <div>
+                <label for="">Padding</label>
+                <input type="text" id="paddingInput">
+            </div>
+            <div>
+                <label for="">Margin</label>
+                <input type="text" id="marginInput">
+            </div>
+            <div>
+                <label for="">Border</label>
+                <input type="text" id="borderInput" placeholder="1px solid black">
+            </div>
+            <div>
+                <label for="">Border radius</label>
+                <input type="text" id="borderRadiusInput">
+            </div>
+            <div>
+                <label for="">Shadow</label>
+                <input type="text" id="shadowInput" placeholder="3px 3px 3px 0 rgba(0,0,0,0.5)">
+            </div>
+        </form>
+
+        <input id="btn" type="button" value="Submit Changes">
+        <input id="rstbtn" type="button" value="RESET PAGE">
+    </div>
+    <div id="mainContainer">
+        <button id="hideMenu"><<br><</button>
+        <button id="showMenu">><br>></button>
+        <div id="buttons">
+            <input type="button" value="Delete Element" id="dltElementBtn">
+        </div>
+        <div id="main"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

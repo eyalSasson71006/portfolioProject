@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome Page</title>
+    <style>
+        #logoutButton {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #logoutButton:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="logoutButton">Logout</button>
+    <h1>Page for logged in users</h1>
+    <h2 id="greeting">Loading...</h2>
+    <script>
+        greeting = document.getElementById("greeting")
+        logoutButton = document.getElementById("logoutButton")
+        currentUser = JSON.parse(localStorage.getItem("currentUser"))
+
+        logoutButton.addEventListener("click", ()=>{
+            localStorage.setItem("currentUser", JSON.stringify([]))
+            location.href = "./login.html"
+        })
+
+        if(currentUser.isAdmin){
+            location.href = "./adminCrm.html"
+        }else if(currentUser){
+            greeting.innerText = "Welcome " + currentUser.name
+        }else{
+            location.href = "./login.html"
+        }
+
+
+    </script>
+</body>
+
+</html>

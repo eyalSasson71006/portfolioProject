@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin CRM</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .btn {
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .delete {
+            background-color: red;
+        }
+
+        .admin {
+            background-color: blue;
+        }
+
+        #logoutButton {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #logoutButton:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Admin CRM - User Management</h1>
+    <button id="logoutButton">Logout</button>
+    <table id="usersTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Last Logged</th>
+                <th>Is Admin</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="dataTable">
+            <!-- User rows will be inserted here dynamically -->
+        </tbody>
+    </table>
+
+    <script>
+        dataTable = document.getElementById("dataTable");
+        currentUser = JSON.parse(localStorage.getItem("currentUser"));
+        logoutButton = document.getElementById("logoutButton")
+
+        let dataForTable = "";
+        let users = JSON.parse(localStorage.getItem("users")) || [];
+
+        logoutButton.addEventListener("click", () => {
+                localStorage.setItem("currentUser", JSON.stringify([]));
+                location.href = "./login.html";
+        })
+
+        if(!currentUser.isAdmin){
+            alert("Your'e not an Admin!!")
+            location.href = "./login.html"
+        }
+
+        users.forEach((user, index) => {
+            dataForTable += `
+        <tr>
+          <td>${user.name}</td>
+          <td>${user.username}</td>
+          <td>${user.email}</td>
+          <td>${user.lastLogged}</td>
+          <td>${user.isAdmin}</td>
+          <td>
+            <button onClick="deleteUser(${index})" class="btn delete">DELETE</button>
+            <button onClick="${adminFunctions(index)}(${index})" class="btn admin">${adminBtn(index)}</button>
+          </td>
+        </tr>
+        `;
+            dataTable.innerHTML = dataForTable;
+        });
+
+        function deleteUser(index) {
+            if (confirm("Are you sure you want to delete this user?")) {
+                users.splice(index, 1);
+                localStorage.setItem("users", JSON.stringify(users));
+                location.reload();
+            }
+        }
+
+        function makeAdmin(index) {
+            if (confirm("Are you sure you want to make this user Admin?")){
+                users[index].isAdmin = true
+                localStorage.setItem("users", JSON.stringify(users));
+                location.reload();
+            }
+        }
+        function removeAdmin(index) {
+            if (confirm("Are you sure you want to remove this user Admin?")){
+                users[index].isAdmin = false
+                localStorage.setItem("users", JSON.stringify(users));
+                location.reload();
+            }
+        }
+
+        function adminFunctions(index){
+            if(users[index].isAdmin){
+                return "removeAdmin"
+            } else{
+                return "makeAdmin"
+            }
+        }
+
+        function adminBtn(index){
+            if (users[index].isAdmin) {
+                return "Remove Admin";
+            } else {
+                return "Make Admin";
+            }
+        }
+    </script>
+</body>
+
+</html>

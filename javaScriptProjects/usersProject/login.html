@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+            display: block;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #registerButton {
+            background-color: #28a745;
+        }
+
+        #registerButton:hover {
+            background-color: #1e7e34;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form>
+            <input type="text" id="usernameInput" placeholder="Username" required />
+            <input type="password" id="passwordInput" placeholder="Password" required />
+            <button type="button" id="loginButton">Log In</button>
+            <button type="button" id="registerButton">Register</button>
+        </form>
+    </div>
+
+    <script>
+        let usernameInput = document.getElementById("usernameInput");
+        let passwordInput = document.getElementById("passwordInput");
+        let loginButton = document.getElementById("loginButton");
+        let registerButton = document.getElementById("registerButton");
+
+        let users = JSON.parse(localStorage.getItem("users")) || [];
+
+        registerButton.addEventListener("click", () => {
+            location.href = "./register.html";
+        });
+
+        loginButton.addEventListener("click", () => {
+            let currentUser = users.find(user => {
+                if(user.username == usernameInput.value && user.password == passwordInput.value){
+                    user.lastLogged = new Date()
+                    console.log(user.lastLogged)
+                    return user
+                }
+            });
+            localStorage.setItem("users", JSON.stringify(users))
+            if (currentUser) {
+                localStorage.setItem("currentUser", JSON.stringify(currentUser))
+                if (currentUser.isAdmin) {
+                    location.href = "./adminCrm.html";
+                }
+                location.href = "./index.html";
+            } else {
+                alert("Wrong username or password...");
+            }
+        })
+
+    </script>
+</body>
+
+</html>
