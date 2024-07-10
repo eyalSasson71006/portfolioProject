@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #6e45e2, #88d3ce);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+h1 {
+    font-family: 'Fredoka One', cursive;
+    color: #6e45e2;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#question {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #ff6b6b;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+input[type="number"],
+select {
+    font-size: 1.2rem;
+    padding: 0.8rem;
+    width: calc(100% - 1.6rem);
+    margin-bottom: 1rem;
+    border: 3px solid #6e45e2;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+input[type="number"]:focus,
+select:focus {
+    outline: none;
+    box-shadow: 0 0 15px rgba(110, 69, 226, 0.4);
+}
+
+button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #ff8e8e;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+#result {
+    margin-top: 1rem;
+    font-weight: bold;
+    font-size: 1.3rem;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+#score {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    color: #6e45e2;
+}
+
+@media(max-width: 550px){
+    body{
+        padding: 0 50px;
+    }
+}

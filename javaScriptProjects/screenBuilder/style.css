@@ -121,10 +121,6 @@ textarea{
     margin: 0;
 }
 
-/* #main>:nth-child(n):hover {
-    border: 1px solid magenta;
-} */
-
 #main>#buttons:hover {
     border: 0;
 }
@@ -144,12 +140,12 @@ textarea{
 }
 
 #mainContainer>#hideMenu{
-    margin: auto -82px;
-    border-radius: 15px 0 0 15px;
+    margin: auto -90px;
+    border-radius: 50px;
 }
 #mainContainer>#showMenu{
     display: none;
-    margin: auto 60px;
+    margin: 0 -50px;
     border-radius: 0 15px 15px 0;
 }
 
@@ -164,4 +160,21 @@ textarea{
 
 .placeholderOption{
     display: none;
+}
+
+
+@media(max-width: 600px){
+    #sideMenu{
+        width: 100vw;
+    }
+    #mainContainer{
+        width: 0vw;
+        padding: 20px 10px 0;
+    }
+    #mainContainer>#showMenu{
+        margin: 0px -10px;
+    }
+    #mainContainer>#hideMenu{
+        margin: auto -60px;
+    }
 }

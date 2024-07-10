@@ -9,7 +9,7 @@
 <body>
     <div id="popUp">
         <h1 id="winner">You Win!</h1>
-        <button onclick="restart()" id="rstBtn">Restart</button>
+        <button id="rstBtn">Restart</button>
     </div>
     <div id="totalMoney">Money: </div>
     <div id="dealer">
@@ -24,19 +24,19 @@
         <label id="playerTotal">Total:</label>
     </div>
     <div class="ui">
-        <button onclick="addCard(playerDeck)" id="hitBtn">HIT</button>
-        <button onclick="stand()" id="standBtn">STAND</button>
+        <button id="hitBtn">HIT</button>
+        <button id="standBtn">STAND</button>
     </div>
     <div id="moneyContainer">
         <div id="chipsContainer">
-            <img src="./images/chip1.png" alt="chip" id="chip1" onclick="addChip(1)">
-            <img src="./images/chip5.png" alt="chip" id="chip5" onclick="addChip(5)">
-            <img src="./images/chip10.png" alt="chip" id="chip10" onclick="addChip(10)">
-            <img src="./images/chip25.png" alt="chip" id="chip25" onclick="addChip(25)">
-            <img src="./images/chip100.png" alt="chip" id="chip100" onclick="addChip(100)">
+            <img src="./images/chip1.png" alt="chip" id="chip1">
+            <img src="./images/chip5.png" alt="chip" id="chip5">
+            <img src="./images/chip10.png" alt="chip" id="chip10">
+            <img src="./images/chip25.png" alt="chip" id="chip25">
+            <img src="./images/chip100.png" alt="chip" id="chip100">
         </div>
         <div id="betContainer">
-            <button id="placeBtn" onclick="placeBet()">Place Bet</button>
+            <button id="placeBtn">Place Bet</button>
             <div id="totalBet">Bet:</div>
         </div>
     </div>

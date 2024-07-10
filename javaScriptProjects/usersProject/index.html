@@ -38,7 +38,9 @@
             location.href = "./login.html"
         })
 
-        if(currentUser.isAdmin){
+        if(!currentUser){
+            location.href = "./login.html"
+        }else if(currentUser.isAdmin){
             location.href = "./adminCrm.html"
         }else if(currentUser){
             greeting.innerText = "Welcome " + currentUser.name

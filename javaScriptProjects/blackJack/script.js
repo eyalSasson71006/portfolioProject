@@ -1,16 +1,18 @@
+// Initialize player and dealer decks
 let playerDeck = [];
 let dealerDeck = [];
+
+// Initialize player and dealer totals
 let pTotal;
 let dTotal;
+
+// Get elements from the DOM
 let popUp = document.getElementById("popUp");
 let winner = document.getElementById("winner");
 let dealerCard = document.getElementById("dealerCard");
 let playerCard = document.getElementById("playerCard");
 let playerTotal = document.getElementById("playerTotal");
 let dealerTotal = document.getElementById("dealerTotal");
-let hitBtn = document.getElementById("hitBtn");
-let standBtn = document.getElementById("standBtn");
-let moneySum = 100;
 let chip1 = document.getElementById("chip1");
 let chip5 = document.getElementById("chip5");
 let chip10 = document.getElementById("chip10");
@@ -19,9 +21,16 @@ let chip100 = document.getElementById("chip100");
 let totalMoney = document.getElementById("totalMoney");
 let totalBet = document.getElementById("totalBet");
 let placeBtn = document.getElementById("placeBtn");
+let hitBtn = document.getElementById("hitBtn");
+let standBtn = document.getElementById("standBtn");
+let rstBtn = document.getElementById("rstBtn");
+
+// Initialize player and dealer money
+let moneySum = 100;
 let bet = 0;
 totalMoney.innerHTML = "Money: " + moneySum;
 
+// Initialize card images
 const cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10];
 const cardImgs = [
     '<img src="./images/cardA.png" class="card" alt="card">',
@@ -39,28 +48,34 @@ const cardImgs = [
     '<img src="./images/cardK.png" class="card" alt="card">',
 ];
 
+// Get random card
 function getRandomCard() {
     let num = Math.floor(Math.random() * 13);
     return num;
 }
 
+// Darken screen and disable buttons
 function darkScreen() {
-    popUp.style.display = "flex";
-    playerCard.style.filter = "brightness(0.1)";
-    dealerCard.style.filter = "brightness(0.1)";
-    hitBtn.disabled = true;
-    standBtn.disabled = true;
-    placeBtn.disabled = true;
-    standBtn.style.filter = "brightness(0.1)";
-    hitBtn.style.filter = "brightness(0.1)";
-    chip1.style.filter = "brightness(0.1)";
-    chip5.style.filter = "brightness(0.1)";
-    chip10.style.filter = "brightness(0.1)";
-    chip25.style.filter = "brightness(0.1)";
-    chip100.style.filter = "brightness(0.1)";
-    placeBtn.style.filter = "brightness(0.1)";
+    setTimeout(() => {
+        popUp.style.display = "flex";
+        playerCard.style.filter = "brightness(0.1)";
+        dealerCard.style.filter = "brightness(0.1)";
+        hitBtn.disabled = true;
+        standBtn.disabled = true;
+        placeBtn.disabled = true;
+        standBtn.style.filter = "brightness(0.1)";
+        hitBtn.style.filter = "brightness(0.1)";
+        chip1.style.filter = "brightness(0.1)";
+        chip5.style.filter = "brightness(0.1)";
+        chip10.style.filter = "brightness(0.1)";
+        chip25.style.filter = "brightness(0.1)";
+        chip100.style.filter = "brightness(0.1)";
+        placeBtn.style.filter = "brightness(0.1)";
+    }, 700);
+    
 }
 
+// Restart game and reset variables and elements to default values 
 function restart() {
     playerDeck = [];
     dealerDeck = [];
@@ -101,14 +116,17 @@ function restart() {
     addCard(dealerDeck);
     addChip(0);
 
+    // check if user is out of money 
     if (moneySum < 1) {
         darkScreen();
+        moneySum = 100
         winner.innerHTML = "Game Over.";
         winner.style.color = "red";
     }
 
 }
 
+// Add card to player or dealer deck and check for win 
 function addCard(playerOrDealer) {
     let num = getRandomCard();
     playerOrDealer.push(cards[num]);
@@ -128,6 +146,7 @@ function addCard(playerOrDealer) {
     checkWin();
 }
 
+// Check if player or dealer has won
 function checkWin() {
     pTotal = 0;
     let ace;
@@ -149,6 +168,7 @@ function checkWin() {
     playerTotal.innerHTML = "Total= " + pTotal;
 }
 
+// handle stand button
 function stand() {
     standBtn.disabled = true;
     hitBtn.disabled = true;
@@ -165,21 +185,18 @@ function stand() {
     }
     if (dTotal >= 17 && dTotal >= pTotal) {
         if (pTotal == dTotal) {
-            // alert("It's a Tie!")
             darkScreen();
             winner.innerHTML = "Push";
             winner.style.color = "yellow";
             moneySum += bet;
             totalMoney.innerHTML = "Money: " + moneySum;
         } else if (pTotal > dTotal || dTotal > 21) {
-            // alert("You Win!")
             darkScreen();
             winner.innerHTML = "You Win!";
             winner.style.color = "green";
             moneySum += bet * 2;
             totalMoney.innerHTML = "Money: " + moneySum;
         } else {
-            // alert("You lose")
             darkScreen();
             winner.innerHTML = "You lose :(";
             winner.style.color = "red";
@@ -192,6 +209,7 @@ function stand() {
 
 }
 
+// add chip to bet and check if user is out of money 
 function addChip(amount) {
     if (moneySum > 0) {
         moneySum -= amount;
@@ -226,6 +244,8 @@ function addChip(amount) {
     }
 }
 
+
+// handle place bet button 
 function placeBet() {
     chip1.style = "pointer-events: none";
     chip5.style = "pointer-events: none";
@@ -243,6 +263,38 @@ function placeBet() {
     placeBtn.disabled = true;
 }
 
+// event listeners
+rstBtn.addEventListener("click", restart)
+
+hitBtn.addEventListener("click", ()=>{
+    addCard(playerDeck);
+})
+standBtn.addEventListener("click", stand)
+
+placeBtn.addEventListener("click", placeBet)
+
+chip1.addEventListener("click", ()=>{
+    addChip(1)
+})
+
+chip5.addEventListener("click", ()=>{
+    addChip(5)
+})
+
+chip10.addEventListener("click", ()=>{
+    addChip(10)
+})
+
+chip25.addEventListener("click", ()=>{
+    addChip(25)
+})
+
+chip100.addEventListener("click", ()=>{
+    addChip(100)
+})
+
+
+// initialize game
 hitBtn.disabled = true;
 standBtn.disabled = true;
 placeBtn.disabled = true;
@@ -251,6 +303,3 @@ addCard(playerDeck);
 addCard(dealerDeck);
 
 
-
-// add comments and arrange code
-//media query

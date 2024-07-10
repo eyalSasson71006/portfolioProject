@@ -35,6 +35,8 @@ if (!localStorage.getItem("elementsArr")) {
 
 let elementsArr = JSON.parse(localStorage.getItem("elementsArr")); // Parse the JSON string to an array
 
+
+// add all the previous elements from local storage
 for (let element of elementsArr) {
     let newBlock = document.createElement(element.type);
     newBlock.id = element.id;
@@ -54,8 +56,6 @@ for (let element of elementsArr) {
     main.appendChild(newBlock);
     count++;
 }
-
-btn.addEventListener("click", addNewBlock);
 
 function addNewBlock() {
     let newBlock = document.createElement(elementInput.value);
@@ -172,41 +172,6 @@ function handleElementClick(event) {
     }
 }
 
-dltElementBtn.addEventListener("click", () => {
-    if (currentElement) {
-        currentElement.remove();
-        reset();
-    }
-    updateLocalArr()
-});
-
-document.addEventListener('DOMContentLoaded', updateElements);
-
-//handle collapse menu 
-hideMenu.addEventListener("click", () => {
-    sideMenu.style.display = "none";
-    hideMenu.style.display = "none";
-    showMenu.style.display = "block";
-    showMenu.style.margin = "0 -50px";
-});
-showMenu.addEventListener("click", () => {
-    sideMenu.style.display = "block";
-    hideMenu.style.display = "block";
-    showMenu.style.display = "none";
-});
-
-//clear hole page
-rstbtn.addEventListener("click", () => {
-    if (confirm("Are you sure you want to delete the page?")) {
-        let elements = main.querySelectorAll("*");
-        elements.forEach(element => {
-            element.remove();
-            reset();
-        });
-        localStorage.clear()
-    }
-});
-
 //reset all inputs and vars
 function reset() {
     let inputs = document.querySelectorAll("input");
@@ -227,6 +192,43 @@ function reset() {
         select.selectedIndex = 0;
     });
 }
+
+dltElementBtn.addEventListener("click", () => {
+    if (currentElement) {
+        currentElement.remove();
+        reset();
+    }
+    updateLocalArr()
+});
+
+document.addEventListener('DOMContentLoaded', updateElements);
+
+btn.addEventListener("click", addNewBlock);
+
+//handle collapse menu 
+hideMenu.addEventListener("click", () => {
+    sideMenu.style.display = "none";
+    hideMenu.style.display = "none";
+    showMenu.style.display = "block";
+});
+showMenu.addEventListener("click", () => {
+    sideMenu.style.display = "block";
+    hideMenu.style.display = "block";
+    showMenu.style.display = "none";
+});
+
+//clear whole page
+rstbtn.addEventListener("click", () => {
+    if (confirm("Are you sure you want to delete the page?")) {
+        let elements = main.querySelectorAll("*");
+        elements.forEach(element => {
+            element.remove();
+            reset();
+        });
+        localStorage.clear()
+    }
+});
+
 
 
 /*
