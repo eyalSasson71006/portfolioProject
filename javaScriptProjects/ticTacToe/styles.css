@@ -73,3 +73,9 @@ h1 {
 .shells{
   width: 90px;
 }
+
+@media(max-width:600px){
+  .cell:hover {
+      background: none;
+    }
+}

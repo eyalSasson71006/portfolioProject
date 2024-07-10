@@ -127,6 +127,7 @@ textarea{
 
 #mainContainer>#hideMenu,
 #mainContainer>#showMenu{
+    display: block;
     position: relative;
     height: 60px;
     border: 0;
