@@ -7,14 +7,14 @@ const scoreLabel = document.getElementById("scoreLabel")
 
 let currentFlag = null
 let score = 0
-let usedCountries = []
+let usedCountries = JSON.parse(localStorage.getItem("usedCountries")) || []
 
 async function getFlag() {
     let randNum = Math.floor(Math.random() * 250);
     let data = await (await fetch('https://restcountries.com/v3.1/all?fields=name,flags')).json()
     data = data[randNum];
     if (usedCountries.length >= 250) {
-        alert("Congratulations you Passed all the world's flags!");
+        alert("Congratulations you Know all the world's flags!");
         usedCountries = [];
     }
     if (usedCountries.find(country => country.name.common == data.name.common)) {
@@ -27,7 +27,6 @@ async function getFlag() {
     }
     console.log(data.name.common);
     currentFlag = data.name.common;
-    usedCountries.push(data)
 
     result.style.opacity = "0"
     result.classList.remove("*");
@@ -36,7 +35,8 @@ async function getFlag() {
 
 let data = getFlag();
 
-submit.addEventListener("click", ()=>{
+submit.addEventListener("click",async ()=>{
+    let flag = await data
     if (guess.value.toLowerCase() == currentFlag.toLowerCase()){
         score++
         result.style.opacity = "1"
@@ -45,6 +45,8 @@ submit.addEventListener("click", ()=>{
         result.innerText = "correct!"
         scoreLabel.innerText = "Score: " + score
         guess.value = ""
+        usedCountries.push(flag)
+        localStorage.setItem("usedCountries", JSON.stringify(usedCountries))
         setTimeout(() => {
             data = getFlag()
         }, 1000);

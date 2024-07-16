@@ -26,7 +26,7 @@ let standBtn = document.getElementById("standBtn");
 let rstBtn = document.getElementById("rstBtn");
 
 // Initialize player and dealer money
-let moneySum = 100;
+let moneySum = JSON.parse(localStorage.getItem("moneySum")) || 100;
 let bet = 0;
 totalMoney.innerHTML = "Money: " + moneySum;
 
@@ -120,6 +120,7 @@ function restart() {
     if (moneySum < 1) {
         darkScreen();
         moneySum = 100
+        localStorage.setItem("moneySum", JSON.stringify(moneySum))
         winner.innerHTML = "Game Over.";
         winner.style.color = "red";
     }
@@ -134,13 +135,13 @@ function addCard(playerOrDealer) {
     if (playerOrDealer == playerDeck) {
         let playerHand = document.getElementById("playerHand");
         let playerCard = document.getElementById("playerCard");
-        playerHand.innerHTML = "My cards: " + playerDeck;
+        playerHand.innerText = "My cards: " + playerDeck;
         playerCard.innerHTML += cardImgs[num];
 
     } else if (playerOrDealer == dealerDeck) {
         let dealerHand = document.getElementById("dealerHand");
         let dealerCard = document.getElementById("dealerCard");
-        dealerHand.innerHTML = "Dealer: " + dealerDeck;
+        dealerHand.innerText = "Dealer: " + dealerDeck;
         dealerCard.innerHTML += cardImgs[num];
     }
     checkWin();
@@ -161,11 +162,10 @@ function checkWin() {
     }
     if (pTotal > 21) {
         darkScreen();
-        winner.innerHTML = "You lose :(";
+        winner.innerText = "You lose :(";
         winner.style.color = "red";
-        // alert("You lose")
     }
-    playerTotal.innerHTML = "Total= " + pTotal;
+    playerTotal.innerText = "Total= " + pTotal;
 }
 
 // handle stand button
@@ -205,7 +205,8 @@ function stand() {
         addCard(dealerDeck);
         setTimeout(stand, 1000);
     }
-    dealerTotal.innerHTML = "Total= " + dTotal;
+    dealerTotal.innerText = "Total= " + dTotal;
+    localStorage.setItem("moneySum", JSON.stringify(moneySum))
 
 }
 
@@ -242,6 +243,7 @@ function addChip(amount) {
     if (bet > 0) {
         placeBtn.disabled = false;
     }
+    localStorage.setItem("moneySum", JSON.stringify(moneySum));
 }
 
 
