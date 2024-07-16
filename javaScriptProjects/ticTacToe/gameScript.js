@@ -1,6 +1,5 @@
 const oneP = document.getElementById("oneP");
 const twoP = document.getElementById("twoP");
-const leaderboardBtn = document.getElementById("leaderboardBtn");
 let rstBtn = document.getElementById("rstBtn");
 
 let player = "X";
@@ -17,18 +16,13 @@ if(!localStorage.getItem("computer")){
 let computer = Number(localStorage.getItem("computer"));
 
 
-if(leaderboardBtn != null){
-    leaderboardBtn.addEventListener("click", () => {
-    document.location = "./leaderBoard.html";
-});}
-
-if(oneP != null)
+if(oneP)
     {oneP.addEventListener("click", () => {
     localStorage.setItem("computer", "1")
     document.location = "./game.html";
 });}
 
-if(twoP != null)
+if(twoP)
     {twoP.addEventListener("click", () => {
     localStorage.setItem("computer", "0")
     document.location = "./game.html";
@@ -110,7 +104,7 @@ function restartGame() {
     });
 }
 
-if(rstBtn != null){
+if(rstBtn){
     rstBtn.addEventListener("click", restartGame);
 }
 
@@ -131,9 +125,6 @@ function checkWin() {
     if (!board.includes("")) {
         return -1;
     }
-
-    //returns 0 if there is no winner yet
-
 }
 
 

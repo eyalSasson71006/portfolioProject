@@ -33,11 +33,15 @@ h1 {
 }
 
 .flag-container img {
-    width: 300px;
-    height: auto;
+    height: 200px;
     border: 2px solid #ddd;
     border-radius: 10px;
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.flag-container img[src="./images/loading.gif"]{
+    border: none;
+    box-shadow: none;
 }
 
 .input-container {
@@ -76,9 +80,8 @@ button:hover {
 }
 
 #result {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
+    font-size: 2rem;
+    transition: opacity 0.3s ease;
 }
 
 #result.correct {
@@ -103,7 +106,7 @@ button:hover {
 
 @media(max-width:660px){
     .flag-container img{
-        width: 200px;
+        max-width: 80vw;
     }
 
     h1{
@@ -111,5 +114,9 @@ button:hover {
     }
     .input-container input{
         width: 60%;
+    }
+
+    #result{
+        font-size: 1.5rem;
     }
 }

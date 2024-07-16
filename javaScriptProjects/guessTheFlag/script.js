@@ -13,35 +13,43 @@ async function getFlag() {
     let randNum = Math.floor(Math.random() * 250);
     let data = await (await fetch('https://restcountries.com/v3.1/all?fields=name,flags')).json()
     data = data[randNum];
-    if (usedCountries.includes(data)) {
+    if (usedCountries.length >= 250) {
+        alert("Congratulations you Passed all the world's flags!");
+        usedCountries = [];
+    }
+    if (usedCountries.find(country => country.name.common == data.name.common)) {
         getFlag();
     }
-    flag.src = data.flags.png;
+    if(data.flags){
+        flag.src = data.flags.png;
+    }else{
+        flag.src = "./images/loading.gif";
+    }
     console.log(data.name.common);
     currentFlag = data.name.common;
     usedCountries.push(data)
 
-    result.style.display = "none";
+    result.style.opacity = "0"
     result.classList.remove("*");
     return data
 }
 
-getFlag()
+let data = getFlag();
 
 submit.addEventListener("click", ()=>{
     if (guess.value.toLowerCase() == currentFlag.toLowerCase()){
         score++
-        result.style.display = "block"
+        result.style.opacity = "1"
         result.classList.remove("wrong")
         result.classList.add("correct")
         result.innerText = "correct!"
         scoreLabel.innerText = "Score: " + score
         guess.value = ""
         setTimeout(() => {
-            getFlag()
+            data = getFlag()
         }, 1000);
     }else{
-        result.style.display = "block"
+        result.style.opacity = "1"
         result.classList.add("wrong")
         result.innerText = "Wrong, try again"
         guess.value = ""
@@ -49,8 +57,13 @@ submit.addEventListener("click", ()=>{
     guess.focus();
 })
 
-skip.addEventListener("click", ()=>{
-    result.classList.remove("wrong");
+skip.addEventListener("click", async ()=>{
+    let flag = await data
     guess.value = "";
-    getFlag();
+    result.style.opacity = "1"
+    result.classList.add("wrong")
+    result.innerText = "The Answer was: " + flag.name.common;
+    setTimeout(() => {
+        data = getFlag();
+    }, 1300);
 })

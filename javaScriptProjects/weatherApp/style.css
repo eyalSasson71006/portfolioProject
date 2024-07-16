@@ -17,8 +17,10 @@ body{
 
 .container{
     width: 90vw;
+    max-width: 1100px;
     height: 90vh;
     display: grid;
+    justify-content: center;
     gap: 20px;
     grid-template-rows: 1fr 2fr 2fr;
     grid-template-columns: repeat(3, 1fr);
@@ -38,6 +40,9 @@ body{
     color: #eee;
     font-family: Merriweather;
     padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .container>div>h2{
@@ -53,8 +58,8 @@ body{
     grid-column: 1/4 ;
     grid-row: 1/2;
     padding: 20px;
+    display: block;
     background: none;
-    width: auto;
     height: fit-content;
 }
 
@@ -73,6 +78,10 @@ body{
 #locationInput{
     border-bottom: 2px solid black;
     width: 300px;
+}
+
+#locationInput:focus {
+    outline: 0;
 }
 
 #degreesDiv{

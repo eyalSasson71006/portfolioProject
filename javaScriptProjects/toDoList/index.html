@@ -3,19 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>To Do List</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <div id="main">
             <h2>To Do</h2>
-            <ul id="list">
-            </ul>
+            <table>
+                <thead>
+                    <tr>
+                        <th>✓</th>
+                        <th>Description</th>
+                        <th></th>
+                        <th></th>
+                        <th>Creation Date</th>
+                    </tr>
+                </thead>
+                <tbody id="todoListBody">
+                </tbody>
+            </table>
         </div>
-        <div id="new">
-            <input type="text" id="userEntry">
-            <button id="btn">Add</button>
+        <div id="inputContainer">
+            <input type="text" id="newTaskInput" placeholder="New task">
+            <button id="addTaskBtn">Add</button>
         </div>
     </div>
 

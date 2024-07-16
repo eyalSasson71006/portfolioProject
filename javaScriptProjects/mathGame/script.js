@@ -30,7 +30,7 @@ function generateQuestions(difficulty) {
         operator = operators[getNums(0, 1)];
     } else if (difficulty == "hard") {
         num1 = getNums(30, 100);
-        num2 = getNums(1, 20);
+        num2 = getNums(3, 20);
         operator = operators[getNums(0, 2)];
     }
     question.innerText = `${num1} ${operator} ${num2}`;
