@@ -1,0 +1,24 @@
+body{
+    display: block;
+    background-attachment: fixed;
+}
+
+#playBtn{
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    border: none;
+    border-radius: 5px;
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+    background-color: blue;
+}
+
+#cards img{
+    height: 150px;
+    border-radius: 5px;
+    background-position: cover;
+}
+
+#un-icon[src="./images/unIcon.svg"]{
+    height: 30px;
+}

@@ -54,15 +54,20 @@ function getRandomCard() {
     return num;
 }
 
+//initialize hidden cards to dealer and user
+function initializeDeck() {
+    playerCard.innerHTML = '<img src="./images/cardsBack.jpg" class="card" alt="card"> <img src="./images/cardsBack.jpg" class="card" alt="card">';
+    dealerCard.innerHTML = `<img src="./images/cardsBack.jpg" class="card" alt="card"></img> <img src="./images/cardsBack.jpg" class="card" alt="card"></img>`
+}
+
 // Darken screen and disable buttons
 function darkScreen() {
+    hitBtn.disabled = true;
+    standBtn.disabled = true;
+    placeBtn.disabled = true;
     setTimeout(() => {
-        popUp.style.display = "flex";
         playerCard.style.filter = "brightness(0.1)";
         dealerCard.style.filter = "brightness(0.1)";
-        hitBtn.disabled = true;
-        standBtn.disabled = true;
-        placeBtn.disabled = true;
         standBtn.style.filter = "brightness(0.1)";
         hitBtn.style.filter = "brightness(0.1)";
         chip1.style.filter = "brightness(0.1)";
@@ -71,6 +76,7 @@ function darkScreen() {
         chip25.style.filter = "brightness(0.1)";
         chip100.style.filter = "brightness(0.1)";
         placeBtn.style.filter = "brightness(0.1)";
+        popUp.style.display = "flex";
     }, 700);
     
 }
@@ -111,10 +117,8 @@ function restart() {
     chip100.style = "pointer-events: auto";
     hitBtn.disabled = true;
     standBtn.disabled = true;
-    addCard(playerDeck);
-    addCard(playerDeck);
-    addCard(dealerDeck);
-    addChip(0);
+    initializeDeck()
+    // addChip(0);
 
     // check if user is out of money 
     if (moneySum < 1) {
@@ -183,7 +187,7 @@ function stand() {
     if (dTotal > 21 && ace) {
         dTotal -= 10;
     }
-    if (dTotal >= 17 && dTotal >= pTotal) {
+    if (dTotal >= 17) {
         if (pTotal == dTotal) {
             darkScreen();
             winner.innerHTML = "Push";
@@ -263,6 +267,12 @@ function placeBet() {
     hitBtn.disabled = false;
     standBtn.disabled = false;
     placeBtn.disabled = true;
+
+    dealerCard.innerHTML = ''
+    playerCard.innerHTML = ''
+    addCard(playerDeck);
+    addCard(playerDeck);
+    addCard(dealerDeck);
 }
 
 // event listeners
@@ -300,8 +310,7 @@ chip100.addEventListener("click", ()=>{
 hitBtn.disabled = true;
 standBtn.disabled = true;
 placeBtn.disabled = true;
-addCard(playerDeck);
-addCard(playerDeck);
-addCard(dealerDeck);
+initializeDeck()
+
 
 

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flag Guessing Game</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles/mainStyle.css">
 </head>
 
 <body>
@@ -16,7 +16,8 @@
                 <img id="flag" src="./images/loading.gif" alt="Flag">
             </div>
             <div class="input-container">
-                <span id="scoreLabel">Score: 0</span>
+                <button id="discoverBtn">Discover</button>
+                <span id="scoreLabel"></span>
                 <input type="text" id="guess" placeholder="Enter country name...">
                 <button id="submit">Submit</button>
                 <button id="skip">Skip</button>
@@ -24,7 +25,7 @@
             <div id="result"></div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="./scripts/mainScript.js"></script>
 </body>
 
 </html>

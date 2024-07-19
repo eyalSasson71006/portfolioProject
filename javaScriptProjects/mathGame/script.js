@@ -1,3 +1,4 @@
+// Get elements from the DOM
 const difficulty = document.getElementById('difficulty');
 const question = document.getElementById('question');
 const answerInput = document.getElementById('answerInput');
@@ -5,6 +6,7 @@ const checkBtn = document.getElementById('checkBtn');
 const result = document.getElementById('result');
 const scoreValue = document.getElementById('scoreValue');
 
+// initialize variables fro game functionality
 let num1;
 let num2;
 let operator;
@@ -18,6 +20,7 @@ function getNums(min, max) {
     return num
 }
 
+// generate questions according to set difficulty
 function generateQuestions(difficulty) {
     reset()
     if (difficulty == "easy") {
@@ -37,6 +40,7 @@ function generateQuestions(difficulty) {
     answerInput.focus()
 }
 
+// check user answer and return true/false accordingly
 function checkAnswer() {
     switch (operator) {
         case "+":
@@ -65,6 +69,7 @@ function checkAnswer() {
     }
 }
 
+// reset ui and answer variable
 function reset() {
     answer = 0
     result.style.opacity = "0"
@@ -72,11 +77,12 @@ function reset() {
     answerInput.value = ""
 }
 
+// change difficulty when user chooses
 difficulty.addEventListener('change', () => {
     generateQuestions(difficulty.value);
 })
 
-
+// user feedback 
 checkBtn.addEventListener("click", ()=>{
     if(checkAnswer()){
         result.style.opacity = "1"
@@ -95,6 +101,7 @@ checkBtn.addEventListener("click", ()=>{
     }, 1500);
 })
 
+// check answer with a click on the enter key
 answerInput.addEventListener("keypress", e => {
     if (e.key === "Enter") {
         e.preventDefault();

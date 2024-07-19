@@ -20,7 +20,7 @@ let currentElement = null;
 let editMode = false;
 
 //main element and buttons
-let btn = document.getElementById("btn");
+let submitBtn = document.getElementById("submitBtn");
 let dltElementBtn = document.getElementById("dltElementBtn");
 let rstbtn = document.getElementById("rstbtn");
 let hideMenu = document.getElementById("hideMenu");
@@ -203,7 +203,7 @@ dltElementBtn.addEventListener("click", () => {
 
 document.addEventListener('DOMContentLoaded', updateElements);
 
-btn.addEventListener("click", addNewBlock);
+submitBtn.addEventListener("click", addNewBlock);
 
 //handle collapse menu 
 hideMenu.addEventListener("click", () => {
@@ -229,13 +229,10 @@ rstbtn.addEventListener("click", () => {
     }
 });
 
-
-
-/*
- - add elements inside a div
- 
- - add img input
-
-  - check if count var works correctly***8
-
-*/
+// add block with a click on the enter key
+document.addEventListener("keypress", e => {
+    if (e.key === "Enter") {
+        e.preventDefault();
+        document.getElementById("submitBtn").click();
+    }
+});

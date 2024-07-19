@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background: url("./images/bg.jpg") bottom center/cover no-repeat;
+    background: url("../images/bg.jpg") bottom center/cover no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,7 +39,7 @@ h1 {
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
 }
 
-.flag-container img[src="./images/loading.gif"]{
+.flag-container img[src="../images/loading.gif"]{
     border: none;
     box-shadow: none;
 }
@@ -101,6 +101,16 @@ button:hover {
     color: #fff;
     font-size: 2em;
     font-weight: bold;
+}
+
+#discoverBtn{
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    border: none;
+    border-radius: 5px;
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+    background-color: blue;
 }
 
 
