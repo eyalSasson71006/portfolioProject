@@ -74,6 +74,13 @@ h1 {
   width: 90px;
 }
 
+#backToMenu{
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  background-color: darkred;
+}
+
 @media(max-width:600px){
   .cell:hover {
       background: none;

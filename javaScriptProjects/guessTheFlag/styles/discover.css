@@ -16,7 +16,6 @@ body{
 #cards img{
     height: 150px;
     border-radius: 5px;
-    background-position: cover;
 }
 
 #un-icon[src="./images/unIcon.svg"]{

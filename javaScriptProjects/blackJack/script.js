@@ -117,18 +117,8 @@ function restart() {
     chip100.style = "pointer-events: auto";
     hitBtn.disabled = true;
     standBtn.disabled = true;
+    totalMoney.innerHTML = "Money: " + moneySum;
     initializeDeck()
-    // addChip(0);
-
-    // check if user is out of money 
-    if (moneySum < 1) {
-        darkScreen();
-        moneySum = 100
-        localStorage.setItem("moneySum", JSON.stringify(moneySum))
-        winner.innerHTML = "Game Over.";
-        winner.style.color = "red";
-    }
-
 }
 
 // Add card to player or dealer deck and check for win 
@@ -166,8 +156,14 @@ function checkWin() {
     }
     if (pTotal > 21) {
         darkScreen();
-        winner.innerText = "You lose :(";
         winner.style.color = "red";
+        if (moneySum < 1) { // check if user is out of money 
+            moneySum = 100;
+            localStorage.setItem("moneySum", JSON.stringify(moneySum));
+            winner.innerHTML = "Game Over.";
+        }else{
+            winner.innerText = "You lose :(";
+        }
     }
     playerTotal.innerText = "Total= " + pTotal;
 }
@@ -202,8 +198,14 @@ function stand() {
             totalMoney.innerHTML = "Money: " + moneySum;
         } else {
             darkScreen();
-            winner.innerHTML = "You lose :(";
             winner.style.color = "red";
+            if (moneySum < 1) { // check if user is out of money 
+                moneySum = 100;
+                localStorage.setItem("moneySum", JSON.stringify(moneySum));
+                winner.innerHTML = "Game Over.";
+            } else {
+                winner.innerText = "You lose :(";
+            }
         }
     } else {
         addCard(dealerDeck);

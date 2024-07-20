@@ -114,3 +114,11 @@ addTaskBtn.addEventListener("click", () => {
     }
     txtInput.focus();
 });
+
+// add Task with a click on the enter key
+document.addEventListener("keypress", e => {
+    if (e.key === "Enter") {
+        e.preventDefault();
+        addTaskBtn.click();
+    }
+});

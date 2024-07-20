@@ -1,6 +1,5 @@
-const oneP = document.getElementById("oneP");
-const twoP = document.getElementById("twoP");
 let rstBtn = document.getElementById("rstBtn");
+let backToMenu = document.getElementById("backToMenu");
 
 let player = "X";
 let board = ["", "", "", "", "", "", "", "", "",];
@@ -9,25 +8,7 @@ const allCells = document.querySelectorAll(".cell")
 let shellX = '<img src="./images/shellX.png" alt="shellX" class="shells">'
 let shellO = '<img src="./images/shellO.png" alt="shellO" class="shells">'
 
-if(!localStorage.getItem("computer")){
-    localStorage.setItem("computer", "0")
-}
-
-let computer = Number(localStorage.getItem("computer"));
-
-
-if(oneP)
-    {oneP.addEventListener("click", () => {
-    localStorage.setItem("computer", "1")
-    document.location = "./game.html";
-});}
-
-if(twoP)
-    {twoP.addEventListener("click", () => {
-    localStorage.setItem("computer", "0")
-    document.location = "./game.html";
-})}
-
+let computer = Number(localStorage.getItem("computer")) || "0";
 
 function makeMove(cell, cellIndex) {
     if (board[cellIndex] === "") {
@@ -126,5 +107,9 @@ function checkWin() {
         return -1;
     }
 }
+
+backToMenu.addEventListener("click", ()=>{
+    location.href = "./index.html"
+})
 
 

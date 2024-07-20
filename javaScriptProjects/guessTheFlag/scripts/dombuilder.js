@@ -1,8 +1,9 @@
 import { countries, search, reset } from "./countries.js";
 
 const searchInput = document.querySelector("#search");
+let usedCountries = JSON.parse(localStorage.getItem("usedCountries")) || []
 
-searchInput.addEventListener("keydown", (event) => {
+searchInput.addEventListener("keyup", (event) => {
   reset();
   cardsDiv.innerHTML = "";
   search(event.target.value.trim());
@@ -24,6 +25,9 @@ export const createCard = (country) => {
 
   const cardTitle = document.createElement("h5");
   cardTitle.className = "card-title";
+  if (usedCountries.find(aCountry => aCountry.name.common == country.name.common)) {
+    cardTitle.style.color = "green"
+  }
   cardTitle.innerHTML = `${country.name.common} ${country.unMember ? `<img src="./images/unIcon.svg" id="un-icon" alt="un icon">` : ""}`;
 
   const stats = document.createElement("p");

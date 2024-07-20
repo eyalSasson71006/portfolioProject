@@ -13,7 +13,6 @@ locationInput.addEventListener("change", ()=>{
     cityName = locationInput.value;
     getData();
 })
-cityName.replace(" ", "-")
 
 async function getData() {
     try {

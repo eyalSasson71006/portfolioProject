@@ -1,0 +1,44 @@
+
+.logoSection img{
+    width: 3vw;
+    min-width: 30px;
+    margin: 20px;
+}
+
+.mainHead{
+    padding-bottom: 100px;
+}
+
+.mainHead h2{
+    font-size: 1.4em;
+    font-weight: normal;
+    margin-bottom: 70px;
+}
+
+.mainHead a.button{
+    margin: 10px 30px;
+}
+
+.mainHead>div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.imgContainer{
+    padding: 150px 0;
+}
+.imgContainer img{
+    display: block;
+    width: 70vw;
+    margin: auto;
+    box-shadow: 0 0 15px 5px #888888;
+}
+
+@media (max-width:610px){
+    .mainHead{
+        padding: 100px 40px;
+        font-size: 70%;
+    }
+
+}
