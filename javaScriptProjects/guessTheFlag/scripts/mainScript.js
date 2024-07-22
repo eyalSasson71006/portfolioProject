@@ -49,7 +49,7 @@ let data = getFlag();
 submit.addEventListener("click",async ()=>{
     let flag = await data
     // check if user guessed correctly 
-    if (guess.value.toLowerCase() == currentFlag.toLowerCase()){
+    if (guess.value.toLowerCase().trim() == currentFlag.toLowerCase()){
         score++
         localStorage.setItem("score", JSON.stringify(score))
         result.style.opacity = "1"
