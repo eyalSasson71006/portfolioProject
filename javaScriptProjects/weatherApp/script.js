@@ -9,10 +9,6 @@ const humidity = document.getElementById("humidity")
 const feels = document.getElementById("feels")
 
 let cityName = locationInput.value
-locationInput.addEventListener("change", ()=>{
-    cityName = locationInput.value;
-    getData();
-})
 
 async function getData() {
     try {
@@ -39,11 +35,15 @@ async function getData() {
         visibility.innerText = data.visibility / 1000 + "km";
         humidity.innerText = data.main.humidity + "%";
         feels.innerText = data.main.feels_like + "°";
-        console.log(data);
     } catch (error) {
         alert("Invalid location, try again...")
         locationInput.value = ""
     }
 }
+
+locationInput.addEventListener("change", () => {
+    cityName = locationInput.value;
+    getData();
+})
 
 getData()

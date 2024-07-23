@@ -9,15 +9,11 @@ export function addCard(playerOrDealer) {
     playerOrDealer.push(cards[num]);
 
     if (playerOrDealer == playerDeck) {
-        let playerHand = document.getElementById("playerHand");
         let playerCard = document.getElementById("playerCard");
-        playerHand.innerText = "My cards: " + playerDeck;
         playerCard.innerHTML += cardImgs[num];
 
     } else if (playerOrDealer == dealerDeck) {
-        let dealerHand = document.getElementById("dealerHand");
         let dealerCard = document.getElementById("dealerCard");
-        dealerHand.innerText = "Dealer: " + dealerDeck;
         dealerCard.innerHTML += cardImgs[num];
     }
     checkWin();

@@ -28,3 +28,11 @@ loginButton.addEventListener("click", () => {
         alert("Wrong username or password...");
     }
 });
+
+// login with a click on the enter key
+document.addEventListener("keypress", e => {
+    if (e.key === "Enter") {
+        e.preventDefault();
+        loginButton.click();
+    }
+});

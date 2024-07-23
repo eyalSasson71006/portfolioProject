@@ -84,7 +84,8 @@ button:disabled{
     right: 0;
     margin: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 15px;
     flex-direction: column;
     text-align: center;
     font-weight: bold;

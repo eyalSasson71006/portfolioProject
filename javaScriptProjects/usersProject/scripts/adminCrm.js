@@ -1,9 +1,9 @@
 dataTable = document.getElementById("dataTable");
-currentUser = JSON.parse(localStorage.getItem("currentUser"));
 logoutButton = document.getElementById("logoutButton");
 
 let dataForTable = "";
 let users = JSON.parse(localStorage.getItem("users")) || [];
+currentUser = JSON.parse(localStorage.getItem("currentUser")) || [];
 
 logoutButton.addEventListener("click", () => {
     localStorage.setItem("currentUser", JSON.stringify([]));

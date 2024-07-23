@@ -4,10 +4,22 @@ This project is my portfolio website created to demonstrate my capabilities in f
 Features:
 - Responsive Design: Adapts to different screen sizes using CSS's grid and Flex responsive utilities.
 - Modern UI/UX: A clean and professional design using SASS for custom styles.
-Interactive Elements: Includes animations and interactive elements to enhance user experience.
+- Interactive Elements: Includes animations and interactive elements to enhance user experience.
 
 Technologies Used:
 - HTML5: For structuring the content on the web.
 - CSS3: For styling the content.
 - SASS: A preprocessor scripting language that is interpreted or compiled into CSS.
 - Bootstrap: A CSS framework for developing responsive and mobile-first websites.
+- JavaScript (JS): For adding dynamic and interactive features.
+- ES6: The latest version of JavaScript for more concise and readable code.
+- API: Integration with external APIs to fetch and display data.
+
+My Portfolio currently contains two Sections:
+Landing Pages:
+This section showcases various landing pages I have created, demonstrating my skills in HTML, CSS, SASS, and Bootstrap. Each landing page is designed with a focus on aesthetics and responsiveness.
+
+Games and Mini Projects:
+In this section, you'll find games and mini projects that I have developed using JavaScript, ES6, API integration, and Object-Oriented Programming. These projects highlight my ability to create interactive and dynamic web applications.
+
+** All JS projects includes a README.txt file, please read it before examination

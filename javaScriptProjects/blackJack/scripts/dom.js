@@ -57,10 +57,8 @@ export function restart() {
     placeBtn.disabled = false;
     standBtn.style.filter = "brightness(1)";
     hitBtn.style.filter = "brightness(1)";
-    playerHand.innerHTML = "My cards: ";
     playerCard.innerHTML = "";
-    playerTotal.innerHTML = "Total= " + pTotal;
-    dealerHand.innerHTML = "Dealer: ";
+    playerTotal.innerHTML = "";
     dealerCard.innerHTML = "";
     dealerTotal.innerHTML = "";
     chip1.style.filter = "brightness(1)";

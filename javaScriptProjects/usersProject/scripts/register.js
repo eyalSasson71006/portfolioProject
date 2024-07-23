@@ -27,6 +27,16 @@ function containsSigns(input) {
     return false;
 }
 
+function checkEmailExistence(input) {
+    for (const user of users) {
+        if (input == user.email) {
+            return true;
+        }
+    }
+    return false;
+}
+
+
 
 function validateFields(name, email, username, password) {
     if (name.length < 2) {
@@ -50,7 +60,7 @@ function validateFields(name, email, username, password) {
     }
     return true;
 }
-//save
+
 function registerUser(name, email, username, password) {
     let user = {
         "name": name,
@@ -63,7 +73,7 @@ function registerUser(name, email, username, password) {
     users.push(user);
     localStorage.setItem("currentUser", JSON.stringify(user));
     localStorage.setItem("users", JSON.stringify(users));
-    //navigation
+
     location.href = "./index.html";
 }
 
@@ -74,11 +84,3 @@ registerButton.addEventListener("click", () => {
     }
 });
 
-function checkEmailExistence(input) {
-    for (const user of users) {
-        if (input == user.email) {
-            return true;
-        }
-    }
-    return false;
-}

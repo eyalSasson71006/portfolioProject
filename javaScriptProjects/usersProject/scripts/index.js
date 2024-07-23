@@ -1,5 +1,6 @@
 greeting = document.getElementById("greeting");
 logoutButton = document.getElementById("logoutButton");
+
 currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
 logoutButton.addEventListener("click", () => {
@@ -7,12 +8,11 @@ logoutButton.addEventListener("click", () => {
     location.href = "./login.html";
 });
 
-if (!currentUser) {
+if (!currentUser || currentUser == "") {
     location.href = "./login.html";
+    alert("Please log in");
 } else if (currentUser.isAdmin) {
     location.href = "./adminCrm.html";
 } else if (currentUser) {
     greeting.innerText = "Welcome " + currentUser.name;
-} else {
-    location.href = "./login.html";
 }
