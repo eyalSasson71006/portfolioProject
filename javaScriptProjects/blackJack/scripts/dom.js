@@ -1,4 +1,4 @@
-import { pTotal, moneySum, modifyBet, modifyDTotal, modifyDealerDeck, modifyPTotal, modifyPlayerDeck, initializeDeck } from "./init.js"
+import { moneySum, modifyBet, modifyDTotal, modifyDealerDeck, modifyPTotal, modifyPlayerDeck, initializeDeck } from "./init.js"
 import { addChip } from "./gameLogic.js"
 
 // Get elements from the DOM
