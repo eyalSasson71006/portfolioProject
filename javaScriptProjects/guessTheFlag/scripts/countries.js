@@ -1,7 +1,11 @@
 const getCountries = async () => {
-  const response = await fetch("https://restcountries.com/v3.1/all");
-  const data = await response.json();
-  return data;
+  try{
+    const response = await fetch("https://restcountries.com/v3.1/all");
+    const data = await response.json();
+    return data;
+  }catch(error){
+    alert("Error, please check your internet connection and try again.")
+  }
 };
 
 const countriesFull = await getCountries();

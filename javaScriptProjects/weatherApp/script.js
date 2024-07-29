@@ -47,8 +47,11 @@ async function getData() {
         day5.innerHTML = getWeekForecast(data.list, 5)
         
     } catch (error) {
-        console.log(error);
-        alert("Invalid location, try again...")
+        if(error.message.includes("Cannot read properties of undefined")){
+            alert("Invalid location, try again...")
+        }else if (error.message.includes("Failed to fetch")) {
+            alert("Error, please check your internet connection and try again.")
+        }
         locationInput.value = ""
     }
 }
